@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx
+    image: jeremyknorr/nginx-certbot
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - path/to/default.conf:/etc/nginx/conf.d/default.conf
+      - /etc/letsencrypt:/etc/letsencrypt
+    restart: always
